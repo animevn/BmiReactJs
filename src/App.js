@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./Header"
 import Footer from "./Footer";
+import Content from "./Content";
 
 
 function App() {
@@ -10,10 +11,8 @@ function App() {
         <Header/>
 
         {/*app goes in here*/}
-        <div className="container pt-2">
-          <h1 className="text-success">
-            Hello World
-          </h1>
+        <div className="container pt-3">
+          <Content/>
         </div>
 
       </div>
