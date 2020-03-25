@@ -1,6 +1,11 @@
 import React from "react";
 
 function Content() {
+
+
+
+
+
   return (
     <div className="container  col-xl-6 col-lg-7 col-md-9 col-sm-10 col-11">
       <div className="card border-success shadow">
@@ -34,9 +39,6 @@ function Content() {
           <div className="d-flex">
             <button className="btn btn-outline-success mx-auto">Calculate</button>
           </div>
-
-
-
 
         </div>
       </div>
