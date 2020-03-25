@@ -1,6 +1,6 @@
 export const Bmi = (weight, height)=>{
   if (weight > 0 && height > 0){
-    return weight * 10000 / (height * height);
+    return (weight * 10000 / (height * height)).toFixed(1);
   }else {
     return "?"
   }
