@@ -46,7 +46,7 @@ function Content() {
               <span className="input-group-text border-success">Height (cm)</span>
             </div>
             <input type="number" className="form-control border-success" onChange={handleChange}
-                   name="height" placeholder="Your weight" aria-label="height"/>
+                   name="height" placeholder="Your height" aria-label="height"/>
           </div>
 
           <div className="border rounded p-2 text-center font-weight-bold mb-3 border-success">
