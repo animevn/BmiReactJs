@@ -2,6 +2,8 @@ import React from "react";
 import Header from "./Header"
 import Footer from "./Footer";
 import Content from "./Content";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
 
 
 function App() {
