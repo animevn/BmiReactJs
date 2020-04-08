@@ -1,9 +1,7 @@
 import React, {useState} from "react";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
-import Card from "@material-ui/core/Card";
-import CardHeader from "@material-ui/core/CardHeader";
-import CardContent from "@material-ui/core/CardContent";
+import Typography from "@material-ui/core/Typography";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import {Bmi, BmiCategory} from "./Calculate";
@@ -13,7 +11,7 @@ function Home() {
   const initialState = {weight: "", height: ""};
   const [state, setState] = useState(initialState);
   const [bmi, setBmi] = useState(initialBmi);
-  const width = {xs:10, sm:8, md:6, lg:5, xl:4};
+  const width = {xs:10, sm:7, md:5, lg:4, xl:3};
 
   function handleChange(event){
     event.preventDefault();
@@ -36,40 +34,39 @@ function Home() {
   }
 
   return (
-    <Grid container direction="column" justify="center" alignContent="center">
+
+    <Grid container direction="row" justify="center" alignItems="center">
       <Grid item {...width}>
-        <Box mt={5}>
-          <Card>
-            <CardHeader title="BMI Calculator"/>
+        <Box mt={5} boxShadow={3} bgcolor="seashell" borderRadius={5}>
+          <Box display="flex" flexDirection="row" justifyContent="center" color="green" p={2}>
+            <Typography variant="h3">BMI Calculator</Typography>
+          </Box>
 
+          <Box display="flex" flexDirection="column" justifyContent="center">
 
-            <CardContent className="card-body">
-              <Box display="flex" flexDirection="column">
-                <Box>
-                  <TextField label="Weight (kg)" variant="outlined" type="number" name="weight"
-                             onChange={handleChange} value={state.weight}/>
-                </Box>
+            <Box display="flex" flexDirection="row" justifyContent="center">
+              <TextField label="Weight (kg)" variant="outlined" type="number" name="weight"
+                         onChange={handleChange} value={state.weight} />
+            </Box>
 
-                <Box mt={2}>
-                  <TextField label="Height (cm)" variant="outlined" type="number" name="height"
-                             onChange={handleChange} value={state.height}/>
-                </Box>
+            <Box display="flex" flexDirection="row" justifyContent="center" mt={2}>
+              <TextField label="Height (cm)" variant="outlined" type="number" name="height"
+                         onChange={handleChange} value={state.height}/>
+            </Box>
 
-              </Box>
+            <Box display="flex" flexDirection="row" justifyContent="center" mt={3}>
+              {bmi.bmi}
+            </Box>
+            <Box display="flex" flexDirection="row" justifyContent="center" mt={2}>
+              {bmi.bmiCategory}
+            </Box>
+            <Box my={3} display="flex" flexDirection="row" justifyContent="center">
+              <Button variant="contained" color="primary" onClick={calculate}>
+                Calculate
+              </Button>
+            </Box>
+          </Box>
 
-              <Box mt={2}>
-                {bmi.bmi}
-              </Box>
-              <Box mt={2}>
-                {bmi.bmiCategory}
-              </Box>
-              <Box mt={2} display="flex" flexDirection="row" justifyContent="center">
-                <Button variant="contained" color="secondary" onClick={calculate}>
-                  Calculate
-                </Button>
-              </Box>
-            </CardContent>
-          </Card>
         </Box>
       </Grid>
     </Grid>
